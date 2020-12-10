@@ -1,12 +1,9 @@
-import { useState } from 'react';
-
 interface Props {
   count: number;
   onChildIncrement: (number: number) => void;
 }
 
 export function Child(props: Props) {
-  const [count, setCount] = useState(props.count);
   return (
     <div>
       <div>Child component</div>
