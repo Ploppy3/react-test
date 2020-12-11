@@ -15,6 +15,7 @@ import { Communication } from './components/Communication';
 import { User } from './components/User';
 import { Context } from './components/Context';
 import { AppContext } from './contexts/app.context';
+import { Animations } from 'components/Animations';
 
 function App() {
 
@@ -56,6 +57,9 @@ function App() {
           <li>
             <Link to="/context">Context</Link>
           </li>
+          <li>
+            <Link to="/animations">Animations</Link>
+          </li>
         </ul>
         <hr />
         <Switch>
@@ -66,6 +70,7 @@ function App() {
           <Route exact path="/communication" component={Communication} />
           <Route exact path="/user/:id" component={User} />
           <Route exact path="/context" component={Context} />
+          <Route exact path="/animations" component={Animations} />
           <Route component={NotFound} />
         </Switch>
       </Router>
