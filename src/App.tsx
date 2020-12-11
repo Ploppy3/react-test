@@ -20,16 +20,16 @@ function App() {
 
   const counter = useSelector((state: any) => state.counter);
 
-  let [appSettings, setAppSettings] = useState({ theme: 'light' });
+  let [settings, setSettings] = useState({ theme: 'light' });
   const appSettingsContext = {
-    appSettings,
-    setTheme: (theme: string) => { setAppSettings({ ...appSettings, ...{ theme } }); },
+    settings,
+    setTheme: (theme: string) => { setSettings({ ...settings, ...{ theme } }); },
   };
 
   return (
     <AppContext.Provider value={appSettingsContext}>
       <Router>
-        <div>Theme: {appSettings.theme}</div>
+        <div>Theme: {settings.theme}</div>
         <div>redux counter: {counter}</div>
         <ul>
           <li>

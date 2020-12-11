@@ -1,7 +1,7 @@
 import { createContext } from 'react';
 
 export const AppContext = createContext({
-  appSettings: {
+  settings: {
     theme: 'light',
   },
   setTheme: (theme: string) => { },
