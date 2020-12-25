@@ -1,0 +1,21 @@
+.collapse-enter {
+  opacity: 0;
+  height: 0;
+}
+
+.collapse-enter-active {
+  transition: all 2s ease;
+  opacity: 1;
+  height: 17px;
+}
+
+.collapse-exit {
+  opacity: 1;
+  height: 17px;
+}
+
+.collapse-exit-active {
+  transition: all 2s ease;
+  opacity: 0;
+  height: 0;
+}
