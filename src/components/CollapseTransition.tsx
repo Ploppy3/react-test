@@ -37,12 +37,12 @@ export const CollapseTransition = (props: { visible: boolean; children: any; }) 
   const calculateHeight = () => {
     if ((ref as MutableRefObject<any>).current) {
       let height = +(ref as MutableRefObject<any>).current.scrollHeight;
-      console.log('height calculated', height);
+      // console.log('height calculated', height);
       setHeight(height);
     }
   };
 
-  console.log(height);
+  // console.log(height);
   const classes = useStyles({ height: height });
 
   const classNames = {

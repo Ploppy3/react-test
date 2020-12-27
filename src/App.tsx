@@ -15,7 +15,8 @@ import { Communication } from './components/Communication';
 import { User } from './components/User';
 import { Context } from './components/Context';
 import { AppContext } from './contexts/app.context';
-import { Animations } from 'components/Animations';
+import { Animations } from 'components/Transitions';
+import TransitionsSpring from 'components/transitions-spring/TransitionsSpring';
 
 function App() {
 
@@ -58,19 +59,22 @@ function App() {
             <Link to="/context">Context</Link>
           </li>
           <li>
-            <Link to="/animations">Animations</Link>
+            <Link to="/transitions">Transitions</Link>
+          </li>
+          <li>
+            <Link to="/transitions-spring">Transitions (Spring)</Link>
           </li>
         </ul>
         <hr />
         <Switch>
           <Route exact path="/" component={Home} />
-          <Route exact path="/about" component={About} />
           <Route exact path="/redux" component={Redux} />
           <Route exact path="/jss" component={Jss} />
           <Route exact path="/communication" component={Communication} />
           <Route exact path="/user/:id" component={User} />
           <Route exact path="/context" component={Context} />
-          <Route exact path="/animations" component={Animations} />
+          <Route exact path="/transitions" component={Animations} />
+          <Route exact path="/transitions-spring" component={TransitionsSpring} />
           <Route component={NotFound} />
         </Switch>
       </Router>

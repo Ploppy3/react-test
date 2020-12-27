@@ -1,7 +1,8 @@
-import { Collapse } from 'components/Collapse';
-import { CollapseTransition } from 'components/CollapseTransition';
-import { TestTransition } from 'components/TestTransition';
+
 import { useState } from 'react';
+import { Collapse } from './Collapse';
+import { CollapseTransition } from './CollapseTransition';
+import { TestTransition } from './TestTransition';
 
 export function Animations() {
 

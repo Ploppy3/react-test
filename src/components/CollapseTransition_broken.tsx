@@ -4,7 +4,7 @@ import { CSSTransition } from 'react-transition-group';
 
 export const CollapseTransition = forwardRef((props: { visible: boolean; children: any; }, ref) => {
 
-  console.log(props);
+  // console.log(props);
 
   const [height, setHeight] = useState(0);
 
