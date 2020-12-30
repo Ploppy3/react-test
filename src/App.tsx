@@ -68,6 +68,7 @@ function App() {
         <hr />
         <Switch>
           <Route exact path="/" component={Home} />
+          <Route exact path="/about" component={About} />
           <Route exact path="/redux" component={Redux} />
           <Route exact path="/jss" component={Jss} />
           <Route exact path="/communication" component={Communication} />
