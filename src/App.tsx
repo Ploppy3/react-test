@@ -6,7 +6,6 @@ import {
   Route,
   Link
 } from "react-router-dom";
-import { About } from './components/About';
 
 import Redux from './components/Redux';
 import { useSelector } from 'react-redux';
@@ -16,7 +15,8 @@ import { User } from './components/User';
 import { Context } from './components/Context';
 import { AppContext } from './contexts/app.context';
 import { Animations } from 'components/Transitions';
-import TransitionsSpring from 'components/transitions-spring/TransitionsSpring';
+import { About } from 'components/About';
+import { TransitionsSpring } from 'components/transitions-spring/TransitionsSpring';
 
 function App() {
 

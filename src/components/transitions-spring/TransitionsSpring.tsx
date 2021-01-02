@@ -9,7 +9,7 @@ const useStyles = createUseStyles({
   }
 });
 
-export default () => {
+export function TransitionsSpring() {
 
   const classes = useStyles();
 

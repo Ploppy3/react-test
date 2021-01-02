@@ -1,4 +1,3 @@
-import { Console } from 'console';
 import { MutableRefObject, useEffect, useRef, useState } from 'react';
 import { createUseStyles } from 'react-jss';
 import { CSSTransition } from 'react-transition-group';

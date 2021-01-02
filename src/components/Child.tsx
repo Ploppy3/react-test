@@ -14,4 +14,4 @@ export function Child(props: Props) {
       <div>(for child-to-parent communication)</div>
     </div>
   );
-}
+};

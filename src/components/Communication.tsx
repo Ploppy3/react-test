@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Child } from './Child';
+import { Child } from 'components/Child';
 
 export function Communication() {
 
