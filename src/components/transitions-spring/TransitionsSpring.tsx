@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { animated, useSpring } from 'react-spring';
 import { Transition } from 'react-spring/renderprops';
 import { createUseStyles } from 'react-jss';
+import { ACCORDION_VERTICAL } from 'components/transitions-spring/animations';
 
 const useStyles = createUseStyles({
   section: {
@@ -17,37 +18,20 @@ export function TransitionsSpring() {
 
   const props = useSpring({ opacity: 1, from: { opacity: 0 } });
 
-  const accordionVertical = {
-    from: {
-      height: 0,
-      opacity: 0,
-    } as any,
-    enter: [
-      {
-        height: 'auto',
-      },
-      {
-        opacity: 1,
-      },
-    ] as any,
-    leave: [
-      {
-        opacity: 0,
-      },
-      {
-        height: 0,
-      },
-    ] as any,
-  };
-
   return (
     <>
       <animated.div style={props}>I will fade in on mount</animated.div>
+      <hr />
       <div>
         <button onClick={() => { setVisible(!isVisible); }}>Toggle (current: {isVisible ? 'true' : 'false'})</button>
       </div>
       <div className={classes.section}>
-        <Transition items={isVisible} config={{ duration: 250 }} from={accordionVertical.from} enter={accordionVertical.enter} leave={accordionVertical.leave}>
+        <Transition
+          items={isVisible}
+          config={{ duration: 250 }}
+          from={ACCORDION_VERTICAL.from}
+          enter={ACCORDION_VERTICAL.enter}
+          leave={ACCORDION_VERTICAL.leave}>
           {v => v && (props =>
             <div style={props}>It works! (keyframes - 2 stages - mount/dismount)</div>
           )}
