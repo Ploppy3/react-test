@@ -1,4 +1,3 @@
-
 import { MutableRefObject, useEffect, useRef, useState } from 'react';
 import { createUseStyles } from 'react-jss';
 import { CSSTransition } from 'react-transition-group';
@@ -9,59 +8,57 @@ const useStyles = createUseStyles({
     height: 0,
   }),
   enterActive: props => ({
-    transition: 'all .5s ease',
+    transition: 'opacity .25s .25s ease, height .25s ease',
     opacity: 1,
     height: `${props.height}px`,
+  }),
+  enterDone: props => ({
   }),
   exit: props => ({
     opacity: 1,
     height: `${props.height}px`,
   }),
   exitActive: props => ({
-    transition: 'all .5s ease',
+    transition: 'opacity .25s ease, height .25s .25s ease',
     opacity: 0,
     height: 0,
   }),
+  exitDone: props => ({
+    height: 0,
+    overflow: 'hidden',
+  }),
 });
 
-/** Only working with visibility set to true when mounted*/
-export function Collapse() {
+export const CollapseTransitionWithAddedDiv = (props: { visible: boolean, children: any; }) => {
 
-  const [visible, setVisible] = useState(true);
   const [height, setHeight] = useState(0);
 
   const ref: MutableRefObject<any> = useRef(null);
-
-  const classes = useStyles({ height: height });
 
   useEffect(() => {
     if (ref.current) {
       setHeight(+ref.current.scrollHeight);
     }
-  }, [ref]);
+  }, [ref, props.visible]);
+
+  // const classes = useStyles({ height: +ref.current.clientHeight });
+  const classes = useStyles({ height: height });
 
   const classNames = {
     enter: classes.enter,
     enterActive: classes.enterActive,
+    enterDone: classes.enterDone,
     exit: classes.exit,
     exitActive: classes.exitActive,
+    exitDone: classes.exitDone,
   };
 
   return (
-    <div>
-      <div>
-        <div>
-          <button onClick={() => { setVisible(!visible); }}>
-            toggle
-          </button>
-        </div>
-        <div>visible: {visible ? 'true' : 'false'}</div>
+    <CSSTransition classNames={classNames} in={props.visible} timeout={500} mountOnEnter={true} unmountOnExit={true}>
+      <div ref={ref}>
+        {props.children}
       </div>
-      {
-        <CSSTransition classNames={classNames} in={visible} timeout={500} mountOnEnter={true} unmountOnExit={true}>
-          <div ref={ref}>test</div>
-        </CSSTransition>
-      }
-    </div>
+    </CSSTransition>
   );
-}
+
+};
