@@ -1,6 +1,5 @@
 
 import { useState } from 'react';
-import { CollapseTransition } from './CollapseTransition';
 import { CollapseTransitionWithAddedDiv } from './CollapseTransitionWithAddedDiv';
 
 export function Animations() {

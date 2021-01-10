@@ -17,6 +17,7 @@ import { AppContext } from './contexts/app.context';
 import { Animations } from 'components/Transitions';
 import { About } from 'components/About';
 import { TransitionsSpring } from 'components/transitions-spring/TransitionsSpring';
+import { Modals } from 'components/Modals';
 
 function App() {
 
@@ -64,6 +65,9 @@ function App() {
           <li>
             <Link to="/transitions-spring">Transitions (Spring)</Link>
           </li>
+          <li>
+            <Link to="/modals">Modals</Link>
+          </li>
         </ul>
         <hr />
         <Switch>
@@ -76,6 +80,7 @@ function App() {
           <Route exact path="/context" component={Context} />
           <Route exact path="/transitions" component={Animations} />
           <Route exact path="/transitions-spring" component={TransitionsSpring} />
+          <Route exact path="/modals" component={Modals} />
           <Route component={NotFound} />
         </Switch>
       </Router>
