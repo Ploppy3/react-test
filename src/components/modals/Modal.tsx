@@ -28,7 +28,14 @@ const Overlay = (props: { children: ReactNode; onClickBackdrop?: () => void; }) 
 
   const classes = useStyles();
 
+  const onClick = (event: any) => {
+    event.stopPropagation();
+    if (props.onClickBackdrop) {
+      props.onClickBackdrop();
+    }
+  };
+
   return (
-    <div className={classes.overlay} onClick={() => { if (props.onClickBackdrop) { props.onClickBackdrop(); } }}>{props.children}</div>
+    <div className={classes.overlay} onClick={onClick}>{props.children}</div>
   );
 };
