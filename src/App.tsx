@@ -42,7 +42,7 @@ function App() {
             <Link to="/about">About</Link>
           </li>
           <li>
-            <Link to="/user/3">User 3</Link>
+            <Link to="/user/3">Router params (/user/3)</Link>
           </li>
           <li>
             <Link to="/azerty">404</Link>
@@ -60,7 +60,7 @@ function App() {
             <Link to="/context">Context</Link>
           </li>
           <li>
-            <Link to="/transitions">Transitions</Link>
+            <Link to="/transitions">Transitions (React Transition Group)</Link>
           </li>
           <li>
             <Link to="/transitions-spring">Transitions (Spring)</Link>
