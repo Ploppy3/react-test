@@ -54,7 +54,7 @@ export const CollapseTransitionWithAddedDiv = (props: { visible: boolean, childr
   };
 
   return (
-    <CSSTransition classNames={classNames} in={props.visible} timeout={500} mountOnEnter={true} unmountOnExit={true}>
+    <CSSTransition classNames={classNames} in={props.visible} nodeRef={ref} timeout={500} mountOnEnter={true} unmountOnExit={true}>
       <div ref={ref}>
         {props.children}
       </div>
