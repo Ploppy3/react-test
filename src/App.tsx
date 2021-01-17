@@ -18,6 +18,7 @@ import { Animations } from 'components/Transitions';
 import { About } from 'components/About';
 import { TransitionsSpring } from 'components/transitions-spring/TransitionsSpring';
 import { Modals } from 'components/Modals';
+import { Form } from 'components/Form';
 
 function App() {
 
@@ -68,6 +69,9 @@ function App() {
           <li>
             <Link to="/modals">Modals</Link>
           </li>
+          <li>
+            <Link to="/form">Form</Link>
+          </li>
         </ul>
         <hr />
         <Switch>
@@ -81,6 +85,7 @@ function App() {
           <Route exact path="/transitions" component={Animations} />
           <Route exact path="/transitions-spring" component={TransitionsSpring} />
           <Route exact path="/modals" component={Modals} />
+          <Route exact path="/form" component={Form} />
           <Route component={NotFound} />
         </Switch>
       </Router>
