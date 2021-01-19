@@ -1,5 +1,4 @@
 import { Fragment, ReactNode, useEffect, useRef, useState } from 'react';
-import ResizeObserver from 'resize-observer-polyfill';
 import styled from 'styled-components';
 
 const Div = styled.div<{ height: number; visible: boolean; }>`
@@ -21,13 +20,9 @@ export const CollapseTransition3 = (props: { visible: boolean, children: ReactNo
   const [visible, setVisible] = useState(props.visible);
 
   useEffect(() => {
-    const ro = new ResizeObserver(([entries]) => {
-      setHeight(entries.target.scrollHeight);
-    });
     if (ref.current) {
-      ro.observe(ref.current);
+      setHeight(ref.current?.scrollHeight);
     }
-    return () => ro.disconnect();
   }, [mounted]);
 
   useEffect(() => {
