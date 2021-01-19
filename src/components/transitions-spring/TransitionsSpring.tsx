@@ -1,8 +1,8 @@
 import { useState } from 'react';
 import { animated, useSpring } from 'react-spring';
-import { Transition } from 'react-spring/renderprops';
 import { createUseStyles } from 'react-jss';
-import { ACCORDION_VERTICAL } from 'components/transitions-spring/animations';
+import { SpringCollapse } from 'components/transitions-spring/SpringCollapse';
+import { SpringCollapse2 } from 'components/transitions-spring/SpringCollapse2';
 
 const useStyles = createUseStyles({
   section: {
@@ -14,29 +14,41 @@ export function TransitionsSpring() {
 
   const classes = useStyles();
 
-  const [isVisible, setVisible] = useState(false);
+  const [visible, setVisible] = useState(false);
+  const [visible2, setVisible2] = useState(false);
 
   const props = useSpring({ opacity: 1, from: { opacity: 0 } });
 
   return (
     <>
-      <animated.div style={props}>I will fade in on mount</animated.div>
+      <animated.div style={props}>I will fade-in on mount</animated.div>
       <hr />
       <div>
-        <button onClick={() => { setVisible(!isVisible); }}>Toggle (current: {isVisible ? 'true' : 'false'})</button>
+        <ToggleButton visible={visible} setVisible={setVisible}></ToggleButton>
       </div>
       <div className={classes.section}>
-        <Transition
-          items={isVisible}
-          config={{ duration: 250 }}
-          from={ACCORDION_VERTICAL.from}
-          enter={ACCORDION_VERTICAL.enter}
-          leave={ACCORDION_VERTICAL.leave}>
-          {v => v && (props =>
-            <div style={props}>It works! (keyframes - 2 stages - mount/dismount)</div>
-          )}
-        </Transition>
+        <SpringCollapse visible={visible}>
+          It works! (keyframes - 2 stages - mount/dismount)
+        </SpringCollapse>
       </div>
+      <hr />
+      <div>
+        <ToggleButton visible={visible2} setVisible={setVisible2}></ToggleButton>
+      </div>
+      <div className={classes.section}>
+        <SpringCollapse2 visible={visible2}>
+          It works! (keyframes - 2 stages - mount/dismount)
+        </SpringCollapse2>
+      </div>
+      <hr />
     </>
   );
 };
+
+function ToggleButton(props: { visible: boolean, setVisible: (number: boolean) => void; }) {
+  return (
+    <>
+      <button onClick={() => { props.setVisible(!props.visible); }}>Toggle</button> ({ props.visible ? 'true' : 'false'})
+    </>
+  );
+}

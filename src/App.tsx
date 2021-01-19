@@ -14,11 +14,12 @@ import { Communication } from './components/Communication';
 import { User } from './components/User';
 import { Context } from './components/Context';
 import { AppContext } from './contexts/app.context';
-import { Animations } from 'components/Transitions';
+import { TransitionReactGroup } from 'components/TransitionReactGroup';
 import { About } from 'components/About';
 import { TransitionsSpring } from 'components/transitions-spring/TransitionsSpring';
 import { Modals } from 'components/Modals';
 import { Form } from 'components/Form';
+import { TransitionsStyledComponents } from 'components/TransitionsStyledComponents';
 
 function App() {
 
@@ -61,10 +62,13 @@ function App() {
             <Link to="/context">Context</Link>
           </li>
           <li>
-            <Link to="/transitions">Transitions (React Transition Group)</Link>
+            <Link to="/transitions-react-group">Transitions (React Transition Group)</Link>
           </li>
           <li>
             <Link to="/transitions-spring">Transitions (Spring)</Link>
+          </li>
+          <li>
+            <Link to="/transitions-styled-components">Transitions (Styled Components)</Link>
           </li>
           <li>
             <Link to="/modals">Modals</Link>
@@ -82,8 +86,9 @@ function App() {
           <Route exact path="/communication" component={Communication} />
           <Route exact path="/user/:id" component={User} />
           <Route exact path="/context" component={Context} />
-          <Route exact path="/transitions" component={Animations} />
+          <Route exact path="/transitions-react-group" component={TransitionReactGroup} />
           <Route exact path="/transitions-spring" component={TransitionsSpring} />
+          <Route exact path="/transitions-styled-components" component={TransitionsStyledComponents} />
           <Route exact path="/modals" component={Modals} />
           <Route exact path="/form" component={Form} />
           <Route component={NotFound} />

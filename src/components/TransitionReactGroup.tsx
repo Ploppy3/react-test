@@ -1,8 +1,8 @@
 
 import { useState } from 'react';
-import { CollapseTransitionWithAddedDiv } from './CollapseTransitionWithAddedDiv';
+import { CollapseTransitionJss } from './CollapseTransitionJss';
 
-export function Animations() {
+export function TransitionReactGroup() {
 
   const [visible, setVisible] = useState(false);
 
@@ -25,9 +25,9 @@ export function Animations() {
       <hr />
       <div>Collapse transition with mount/unmount</div>
       <ToggleButton visible={visible} setVisible={setVisible}></ToggleButton>
-      <CollapseTransitionWithAddedDiv visible={visible}>
+      <CollapseTransitionJss visible={visible}>
         <div>test children</div>
-      </CollapseTransitionWithAddedDiv>
+      </CollapseTransitionJss>
 
       <hr />
 

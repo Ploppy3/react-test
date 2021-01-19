@@ -29,7 +29,7 @@ const useStyles = createUseStyles({
   }),
 });
 
-export const CollapseTransitionWithAddedDiv = (props: { visible: boolean, children: any; }) => {
+export const CollapseTransitionJss = (props: { visible: boolean, children: any; }) => {
 
   const [height, setHeight] = useState(0);
 
