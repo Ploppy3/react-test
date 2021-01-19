@@ -5,11 +5,16 @@ import { Fragment } from "react";
 export const TransitionsStyledComponents = () => {
   return (
     <Fragment>
-      <div>it works!</div>
       <Toggler>
         {(state) =>
           <CollapseTransition3 visible={state}>
             <div>Test</div>
+            <Toggler>
+              {(state) =>
+                state &&
+                <div>child</div>
+              }
+            </Toggler>
           </CollapseTransition3>
         }
       </Toggler>
