@@ -7,19 +7,19 @@ import {
   Link
 } from "react-router-dom";
 
-import Redux from './components/Redux';
+import Redux from './components/pages/Redux';
 import { useSelector } from 'react-redux';
-import Jss from './components/Jss';
-import { Communication } from './components/Communication';
-import { User } from './components/User';
-import { Context } from './components/Context';
+import Jss from './components/pages/Jss';
+import { Communication } from './components/pages/Communication';
+import { User } from './components/pages/User';
+import { Context } from './components/pages/Context';
 import { AppContext } from './contexts/app.context';
-import { TransitionReactGroup } from 'components/TransitionReactGroup';
-import { About } from 'components/About';
-import { TransitionsSpring } from 'components/transitions-spring/TransitionsSpring';
-import { Modals } from 'components/Modals';
-import { Form } from 'components/Form';
-import { TransitionsStyledComponents } from 'components/TransitionsStyledComponents';
+import { TransitionReactTransitionGroup } from 'components/pages/TransitionReactTransitionGroup';
+import { About } from 'components/pages/About';
+import { TransitionsSpring } from 'components/pages/TransitionsSpring';
+import { Modals } from 'components/pages/Modals';
+import { Form } from 'components/pages/Form';
+import { TransitionsStyledComponents } from 'components/pages/TransitionsStyledComponents';
 
 function App() {
 
@@ -86,7 +86,7 @@ function App() {
           <Route exact path="/communication" component={Communication} />
           <Route exact path="/user/:id" component={User} />
           <Route exact path="/context" component={Context} />
-          <Route exact path="/transitions-react-group" component={TransitionReactGroup} />
+          <Route exact path="/transitions-react-group" component={TransitionReactTransitionGroup} />
           <Route exact path="/transitions-spring" component={TransitionsSpring} />
           <Route exact path="/transitions-styled-components" component={TransitionsStyledComponents} />
           <Route exact path="/modals" component={Modals} />

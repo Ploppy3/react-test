@@ -1,8 +1,10 @@
 import { useState } from 'react';
 import { animated, useSpring } from 'react-spring';
 import { createUseStyles } from 'react-jss';
-import { SpringCollapse } from 'components/transitions-spring/SpringCollapse';
-import { SpringCollapse2 } from 'components/transitions-spring/SpringCollapse2';
+import { SpringCollapse } from 'components/transitions/transitions-spring/SpringCollapse';
+import { SpringCollapse2 } from 'components/transitions/transitions-spring/SpringCollapse2';
+import { Toggler } from 'components/Toggler';
+import { SpringCollapse3 } from 'components/transitions/transitions-spring/SpringCollapse3';
 
 const useStyles = createUseStyles({
   section: {
@@ -40,6 +42,12 @@ export function TransitionsSpring() {
           It works! (keyframes - 2 stages - mount/dismount)
         </SpringCollapse2>
       </div>
+      <hr />
+      <Toggler>
+        {
+          state => <SpringCollapse3 visible={state}></SpringCollapse3>
+        }
+      </Toggler>
       <hr />
     </>
   );

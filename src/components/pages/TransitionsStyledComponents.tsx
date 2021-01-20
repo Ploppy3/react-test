@@ -1,4 +1,4 @@
-import { CollapseTransition3 } from "components/CollapseTransition3";
+import { CollapseTransition3 } from "components/transitions/CollapseTransition3";
 import { Toggler } from "components/Toggler";
 import { Fragment } from "react";
 

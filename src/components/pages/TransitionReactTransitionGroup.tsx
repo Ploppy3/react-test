@@ -1,8 +1,10 @@
 
-import { useState } from 'react';
-import { CollapseTransitionJss } from './CollapseTransitionJss';
+import { CollapseTransition4 } from 'components/transitions/CollapseTransition4';
+import { Toggler } from 'components/Toggler';
+import { Fragment, useState } from 'react';
+import { CollapseTransitionJss } from '../transitions/CollapseTransitionJss';
 
-export function TransitionReactGroup() {
+export function TransitionReactTransitionGroup() {
 
   const [visible, setVisible] = useState(false);
 
@@ -28,6 +30,20 @@ export function TransitionReactGroup() {
       <CollapseTransitionJss visible={visible}>
         <div>test children</div>
       </CollapseTransitionJss>
+
+      <hr />
+
+      <Toggler>
+        {(state) =>
+          <CollapseTransition4 visible={state}>
+            <div>Test</div>
+            {
+              visible &&
+              <div>child</div>
+            }
+          </CollapseTransition4>
+        }
+      </Toggler>
 
       <hr />
 
